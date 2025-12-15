@@ -439,3 +439,8 @@ html {
         height: 2.5rem;
     }
 }
+
+span.alert {
+    color: var(--accent);
+    font-weight: bold;
+}

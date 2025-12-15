@@ -7,17 +7,15 @@ YELLOW="\033[1;33m"
 RED="\033[1;31m"
 RESET="\033[0m"
 
-NOME="Audacity"
+NOME="Darktable"
 
 # Repositório GitHub
-REPO="audacity/audacity"
-TMP="/tmp/${NOME}.AppImage"
+REPO="darktable-org/darktable"
+TMP="/tmp/darktable.AppImage"
 
 # Pega a URL do AppImage da última release
-URL=$(curl -s https://api.github.com/repos/$REPO/releases/latest \
-      | grep browser_download_url \
-      | grep 22.04.AppImage \
-      | cut -d '"' -f 4)
+URL=$(curl -s "https://api.github.com/repos/$REPO/releases/latest" \
+      | jq -r '.assets[] | select(.name | endswith(".AppImage")) | .browser_download_url')
 
 printf "${YELLOW}Baixando %s...${RESET}\n" "$NOME"
 curl -L "$URL" -o "$TMP"

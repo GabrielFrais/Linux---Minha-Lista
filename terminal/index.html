@@ -8,7 +8,7 @@
     <base href="/FraisTech/">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/terminal.css">
-    <link rel="icon" type="image/svg+xml" href="/icon.svg">
+    <link rel="icon" type="image/svg+xml" href="./icon.svg">
 </head>
 <body>
     <!-- Header -->
@@ -237,6 +237,20 @@ fisher install nickeb96/puffer-fish</code></pre>
                     <h2 class="section-title-primary">Extras Recomendados</h2>
 
                     <div class="extras-grid">
+                        <div class="extra-item">
+                            <p class="extra-title">
+                                Adicionar o <code class="inline-code">~/Script</code> no <code class="inline-code">$PATH</code> para carregar os scripts automaticamente:
+                            </p>
+                            <div class="code-box">
+                                <code>set -Ua fish_user_paths ~/Script</code>
+                                <button class="btn-copy-code" aria-label="Copiar código">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
                         <div class="extra-item">
                             <p class="extra-title">
                                 <strong>fzf</strong> (necessário para <code class="inline-code">fzf.fish</code>):
