@@ -7,8 +7,7 @@ TMP="/tmp/joplin.AppImage"
 
 # Pega a URL do AppImage da última release
 URL=$(curl -s "https://api.github.com/repos/$REPO/releases/latest" \
-      | grep "browser_download_url.*AppImage" \
-      | cut -d '"' -f 4)
+      | jq -r '.assets[] | select(.name | endswith(".AppImage")) | .browser_download_url')
 
 # Baixa e executa
 curl -L "$URL" -o "$TMP"
