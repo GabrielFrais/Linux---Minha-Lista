@@ -7,15 +7,17 @@ YELLOW="\033[1;33m"
 RED="\033[1;31m"
 RESET="\033[0m"
 
-NOME="Joplin"
+NOME="Audacity"
 
 # Repositório GitHub
-REPO="laurent22/joplin"
-TMP="/tmp/joplin.AppImage"
+REPO="audacity/audacity"
+TMP="/tmp/${NOME}.AppImage"
 
 # Pega a URL do AppImage da última release
-URL=$(curl -s "https://api.github.com/repos/$REPO/releases/latest" \
-      | jq -r '.assets[] | select(.name | endswith(".AppImage")) | .browser_download_url')
+URL=$(curl -s https://api.github.com/repos/$repo/releases/latest \
+      | grep browser_download_url \
+      | grep 22.04.AppImage \
+      | cut -d '"' -f 4)
 
 printf "${YELLOW}Baixando %s...${RESET}\n" "$NOME"
 curl -L "$URL" -o "$TMP"
