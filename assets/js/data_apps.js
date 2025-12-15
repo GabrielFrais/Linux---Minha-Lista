@@ -7,7 +7,7 @@ const categories = [
             {
                 name: "Visual Studio Code",
                 description: "Editor de código poderoso e extensível com suporte para múltiplas linguagens",
-                install: "curl -sL https://raw.githubusercontent.com/GabrielFrais/FraisTech/main/script/install_vscode.sh | sh",
+                install: "curl -sL https://raw.githubusercontent.com/GabrielFrais/FraisTech/main/install_scripts/install_vscode.sh | sh",
                 type: ".deb"
             },
             {
@@ -25,14 +25,14 @@ const categories = [
         ]
     },
     {
-        id: "produtividade",
-        title: "Produtividade",
-        description: "Aplicativos para aumentar sua produtividade",
+        id: "comunicacao",
+        title: "Comunicação",
+        description: "Mensagens e videoconferência",
         apps: [
             {
-                name: "Obsidian (Em Deselvolvimento)",
-                description: "Aplicativo de anotações em Markdown com gráfico de conhecimento",
-                install: "sudo snap install obsidian --classic",
+                name: "Discord (Em Deselvolvimento)",
+                description: "Plataforma de comunicação para comunidades",
+                install: "sudo snap install discord",
                 type: "snap"
             }
         ]
@@ -42,6 +42,12 @@ const categories = [
         title: "Multimídia",
         description: "Edição e reprodução de mídia",
         apps: [
+            {
+                name: "Stremio",
+                description: "Player de vídeo que reproduz filmes e séries torrent",
+                install: "flatpak install flathub com.stremio.Stremio",
+                type: "flatpack"
+            },
             {
                 name: "VLC Media Player",
                 description: "Player de vídeo que reproduz praticamente qualquer formato",
@@ -63,15 +69,46 @@ const categories = [
         ]
     },
     {
-        id: "comunicacao",
-        title: "Comunicação",
-        description: "Mensagens e videoconferência",
+        id: "produtividade",
+        title: "Produtividade",
+        description: "Aplicativos para aumentar sua produtividade",
         apps: [
             {
-                name: "Discord (Em Deselvolvimento)",
-                description: "Plataforma de comunicação para comunidades",
-                install: "sudo snap install discord",
+                name: "Obsidian (Em Deselvolvimento)",
+                description: "Aplicativo de anotações em Markdown com gráfico de conhecimento",
+                install: "sudo snap install obsidian --classic",
                 type: "snap"
+            },
+            {
+                name: "ONLYOFFICE",
+                description: "Suíte office completa para criar e editar documentos de texto, planilhas e apresentações.",
+                install: "curl -sL https://raw.githubusercontent.com/GabrielFrais/FraisTech/main/install_scripts/install_onlyoffice.sh | sh",
+                type: ".deb"
+            }
+        ]
+    },
+    {
+        id: "sistema",
+        title: "Sistema",
+        description: "EM DESENVOLVIMENTO",
+        apps: [
+            {
+                name: "Flatseal",
+                description: "Gerencie as permissões de Flatpaks",
+                install: "flatpak install flathub io.github.flattool.Warehouse",
+                type: "flatpack"
+            },
+            {
+                name: "Mission Center",
+                description: "Monitorar o uso de recursos do sistema",
+                install: "flatpak install flathub io.missioncenter.MissionCenter",
+                type: "flatpack"
+            },
+            {
+                name: "Warehouse",
+                description: "Gerencie tudo relacionado a Flatpak",
+                install: "flatpak install flathub com.github.tchx84.Flatseal",
+                type: "flatpack"
             }
         ]
     }
