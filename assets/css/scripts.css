@@ -19,14 +19,13 @@
 }
 
 .scripts-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    column-count: 1;
+    column-gap: 1.5rem;
 }
 
 @media (min-width: 1024px) {
     .scripts-grid {
-        grid-template-columns: repeat(2, 1fr);
+        column-count: 2;
     }
 }
 
@@ -37,6 +36,10 @@
     border-radius: var(--radius);
     padding: 1.5rem;
     transition: all 0.3s;
+    break-inside: avoid; /* ADICIONE */
+    margin-bottom: 1.5rem; /* ADICIONE */
+    display: inline-block; /* ADICIONE */
+    width: 100%; /* ADICIONE */
 }
 
 .script-card:hover {
@@ -100,12 +103,14 @@
 
 .code-block pre {
     margin: 0;
+    white-space: pre-wrap;
 }
 
 .code-block code {
     font-size: 0.75rem;
     font-family: 'Courier New', monospace;
     color: var(--secondary-foreground);
+    word-break: break-word;
 }
 
 .script-note {

@@ -82,6 +82,12 @@ body {
     font-size: 1.125rem;
 }
 
+.text-accent {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: large;
+}
+
 .nav-menu {
     display: none;
     align-items: center;
@@ -387,7 +393,6 @@ body {
     color: var(--muted-foreground);
 }
 
-/* Scroll behavior */
 html {
     scroll-behavior: smooth;
 }
